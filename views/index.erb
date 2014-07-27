@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+    <title>Drown The Clown</title>
+    <!-- Version <%= get_version %> -->
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1,minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="format-detection" content="telephone=no">
+
+    <script>
+        window.APP_VERSION = "<%= get_version %>";
+        window.SERVICE_URL = "<%= service_url %>";
+        var load = function(){
+            window.app.init();
+        }
+    </script>
+    <%= stylesheet_tag main_css %>
+</head>
+<body onload="load()">
+    <div id="welcome">
+        <div id="background"></div>
+        <img class="pch" src="assets/logo.png">
+        <img id="splash" src="assets/splash.png" class="pulse-grow-slow">
+        <img id="ribbon-back" src="assets/ribbon-back.png">
+        <img class="flight-balloons" src="assets/balloons.png">
+        <div id="ribbon1" src="assets/ribbon-1.png"></div>
+        <div id="ribbon2" src="assets/ribbon-2.png"></div>
+        <img id="prize" src="assets/name_1000.png">
+        <div id="welcome-you">
+            <h1>Welcome Allison</h1>
+            <p>Click below to get started!</p>
+            <div class="button"></div>
+        </div>
+    </div>
+    <div id="game">
+        <img class="pch" src="assets/logo.png">
+        <img id="balloons" src="assets/logo_balloons.png">
+        <div id="clowns">
+           <img id="clown" src="assets/clown.png">
+            <div id="balloon1" class="balloon">
+                <img src="assets/balloon1.png" class="balloon">
+                <img src="assets/boom1.png" class="boom">
+                <img src="assets/splash_balloon.png" class="splash">
+            </div>
+            <div id="balloon2" class="balloon">
+                <img src="assets/balloon2.png" class="balloon">
+                <img src="assets/boom2.png" class="boom">
+                <img src="assets/splash_balloon.png" class="splash">
+            </div>
+            <div id="balloon3" class="balloon">
+                <img src="assets/balloon3.png" class="balloon">
+                <img src="assets/boom3.png" class="boom">
+                <img src="assets/splash_balloon.png" class="splash">
+            </div>
+            <div id="balloon4" class="balloon">
+                <img src="assets/balloon4.png" class="balloon">
+                <img src="assets/boom4.png" class="boom">
+                <img src="assets/splash_balloon.png" class="splash">
+            </div>
+            <div id="balloon5" class="balloon">
+                <img src="assets/balloon5.png" class="balloon">
+                <img src="assets/boom5.png" class="boom">
+                <img src="assets/splash_balloon.png" class="splash">
+            </div>
+        </div>
+        <div id="drown1" class="drown"></div>
+        <div id="drown2" class="drown"></div>
+        <div id="drown3" class="drown"></div>
+        <div id="drown4" class="drown"></div>
+        <div id="drown5" class="drown"></div>
+        <img id="guns" src="assets/guns.png">
+
+        <div id="number1" class="number">
+            <div></div>
+            <div></div>
+        </div>
+        <div id="number2" class="number">
+            <div></div>
+            <div></div>
+        </div>
+        <div id="number3" class="number">
+            <div></div>
+            <div></div>
+        </div>
+        <div id="number4" class="number">
+            <div></div>
+            <div></div>
+        </div>
+        <div id="number5" class="number">
+            <div></div>
+            <div></div>
+        </div>
+        <img id="chooseGun" src="assets/click_me.png" class="pulse-grow" active="active">
+    </div>
+    <div id="bye">
+        <img class="flight-balloons" src="assets/balloons.png">
+        <img id="way" class="pulse-grow-slow" src="assets/waytogo.png">
+        <img id="keep" src="assets/keepplaying.png">
+    </div>
+
+  <%= javascript_tag main_js %>
+</body>
+</html>
