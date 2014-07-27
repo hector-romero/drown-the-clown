@@ -7,6 +7,11 @@ class Finish extends BaseView
   setPrize: (prize) ->
     @prize = prize
 
+  render: ->
+    super
+    if @prize && @prize.description
+      alert @prize.description
+
 # exports
 
 window.Finish = Finish

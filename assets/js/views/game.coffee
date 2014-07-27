@@ -57,9 +57,9 @@ class Game extends BaseView
     prize = null
     winner = getRandomWinner(number)
     timedOut = false
-    service.getPrize(number ,(prize)=>
+    service.getPrize(number ,(p)=>
       return if timedOut
-      console.log "Winner",number
+      prize = p
       winner = number
     ->)
     i = 0
@@ -67,7 +67,6 @@ class Game extends BaseView
       =>
         index++
         timedOut = timedOut || index == number || index == winner
-        console.log "HAST TO BOOM #{index} #{winner}"
         index == winner
     for balloon,i in @balloons
       balloon.drown hasToBoom i
