@@ -29,7 +29,9 @@ class ApplicationView extends Backbone.View
     @finish = new Finish(el: $("#bye")[0])
 
     @listenToOnce @welcome, "finish", => @showView(@game)
-    @listenToOnce @game, "finish", => @showView(@finish)
+    @listenToOnce @game, "finish",(prize) =>
+      @finish.setPrize(prize)
+      @showView(@finish)
     @listenToOnce @finish, "finish", => location.reload()
 
   render: ->

@@ -1,5 +1,11 @@
 #= require views/base
 #= require vendor/ballon
+#= require service
+
+getRandomWinner = (excluding)->
+  list = [0..4]
+  list.splice(excluding - 1,1)
+  rand = list[Math.floor(Math.random() * list.length)]
 
 class Game extends BaseView
   moveBalloons: ->
@@ -46,16 +52,29 @@ class Game extends BaseView
       @moveClowns @showNumbers
     ), 100
 
+
   drown: (number) ->
+    prize = null
+    winner = getRandomWinner(number)
+    timedOut = false
+    service.getPrize(number ,(prize)=>
+      return if timedOut
+      console.log "Winner",number
+      winner = number
+    ->)
     i = 0
-    hasToBoom =(number) =>
-      => number == 3
+    hasToBoom =(index) =>
+      =>
+        index++
+        timedOut = timedOut || index == number || index == winner
+        console.log "HAST TO BOOM #{index} #{winner}"
+        index == winner
     for balloon,i in @balloons
       balloon.drown hasToBoom i
     game = this
 
     window.setTimeout (=>
-      @finish()
+      @finish(prize)
 
     ), 6000
 

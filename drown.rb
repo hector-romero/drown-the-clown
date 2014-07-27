@@ -122,4 +122,16 @@ class App < Sinatra::Base
   get '/changelog' do
     changelog
   end
+
+  get '/drown_clown/:clown', :provides => :json do
+    clown = params[:clown]
+    if clown == "2"
+      File.read 'winner.json'
+    else
+      File.read 'loser.json'
+    end
+
+
+  end
+
 end

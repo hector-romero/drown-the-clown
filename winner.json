@@ -1,0 +1,15 @@
+{
+    "status": 2,
+    "iw_response": {
+         "type": "winner",
+         "data": {
+             "description": "You have won $100!!!",
+             "prizeType": "cash",
+             "prizeValue": 10,
+             "imageUrl": "http://cdn.pch.com/SpectrumMedia/...",
+             "timeStamp": "Mon Jun 03 16:35:07 EDT 2013",
+             "claimUrl": "https://claim.pch.com/claim/fb/..."
+        }
+    },
+    "jtoken": "vjr890439hj349j340hj43"
+}
