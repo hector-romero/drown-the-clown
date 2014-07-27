@@ -5,6 +5,9 @@
 
 class BaseView extends  Backbone.View
 
+  finish: (options)->
+    @trigger 'finish', options
+
   render: ->
     @$el.fadeIn()
 

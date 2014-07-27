@@ -55,7 +55,7 @@ class Game extends BaseView
     game = this
 
     window.setTimeout (=>
-      @trigger 'game:finish'
+      @finish()
 
     ), 6000
 

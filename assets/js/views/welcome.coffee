@@ -1,6 +1,8 @@
 #= require views/base
 
 class Welcome extends BaseView
+  events:
+    'click .button' : 'finish'
 
   showPrize: =>
     @$('#prize').fadeIn 'fast', =>

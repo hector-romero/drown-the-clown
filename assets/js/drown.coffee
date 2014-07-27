@@ -7,11 +7,8 @@
 #= require views/finish
 
 class ApplicationView extends Backbone.View
-  events:
-    'click #welcome-you .button' : 'showGame'
 
   showView:(nextView) ->
-    console.log "SHOW ViEW", nextView
     showNext = =>
       nextView.render()
       @currentView = nextView
@@ -19,9 +16,6 @@ class ApplicationView extends Backbone.View
       @currentView.hide showNext
     else
       showNext()
-
-  showGame: ->
-    @showView @game
 
   lightBackground: =>
     move(@$('#background')[0])
@@ -34,7 +28,9 @@ class ApplicationView extends Backbone.View
     @game = new Game(el: $("#game")[0])
     @finish = new Finish(el: $("#bye")[0])
 
-    @listenToOnce @game, "game:finish", => @showView(@finish)
+    @listenToOnce @welcome, "finish", => @showView(@game)
+    @listenToOnce @game, "finish", => @showView(@finish)
+    @listenToOnce @finish, "finish", => location.reload()
 
   render: ->
     @lightBackground()
