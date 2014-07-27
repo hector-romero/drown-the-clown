@@ -1,6 +1,5 @@
 #= require vendor/jquery
 
-SERVICE_URL = 'drown_clown/'
 window.service =
   getPrize: (clown,success,error)->
     $.ajax(

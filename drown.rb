@@ -65,6 +65,10 @@ class App < Sinatra::Base
       end
     end
 
+    def service_url
+      'drown_clown/'
+    end
+
     def index
       if !settings.compiled_index or settings.recompile_views?
         settings.compiled_index = erb(settings.index)
@@ -94,6 +98,10 @@ class App < Sinatra::Base
 
     def get_version
       settings.version
+    end
+
+    def htaccess
+      erb :htaccess
     end
 
     def get_assets
@@ -126,9 +134,9 @@ class App < Sinatra::Base
   get '/drown_clown/:clown', :provides => :json do
     clown = params[:clown]
     if clown == "2"
-      File.read 'winner.json'
+      settings.assets.find_asset 'winner.json'
     else
-      File.read 'loser.json'
+      settings.assets.find_asset 'loser.json'
     end
 
 
