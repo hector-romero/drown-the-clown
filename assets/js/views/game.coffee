@@ -59,10 +59,13 @@ class Game extends BaseView
     winner = getRandomWinner(number)
     timedOut = false
     service.getPrize(number ,(p)=>
+      console.log "Got response", timedOut,p
       return if timedOut
       prize = p
       winner = number
-    ->)
+    ,(e)->
+        console.error(e)
+    )
     i = 0
     hasToBoom =(index) =>
       =>
