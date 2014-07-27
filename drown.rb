@@ -104,6 +104,10 @@ class App < Sinatra::Base
       erb :htaccess
     end
 
+    def service
+      erb :'service.php'
+    end
+
     def get_assets
       assets_list = []
       [main_js,main_css].each do |asset|

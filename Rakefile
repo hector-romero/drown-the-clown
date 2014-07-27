@@ -43,6 +43,10 @@ def build_htaccess output_dir
   build_file output_dir,'.htaccess', Application.new.helpers.htaccess
 end
 
+def build_service output_dir
+  build_file output_dir,'service.php', Application.new.helpers.service
+end
+
 def build output_dir, production
   if production
     Application.set :use_key, :production
@@ -56,6 +60,7 @@ def build output_dir, production
   build_index output_dir
   build_changelog output_dir
   build_htaccess output_dir
+  build_service output_dir
 end
 
 task :build_assets, [:output_dir] do |task, args|
