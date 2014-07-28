@@ -3,7 +3,7 @@
 #= require service
 
 getRandomWinner = (excluding)->
-  list = [0..4]
+  list = [1..5]
   list.splice(excluding - 1,1)
   rand = list[Math.floor(Math.random() * list.length)]
 
@@ -54,14 +54,18 @@ class Game extends BaseView
 
 
   drown: (number) ->
+    console.log number
     prize = null
     winner = getRandomWinner(number)
     timedOut = false
     service.getPrize(number ,(p)=>
+      console.log "Got response", timedOut,p
       return if timedOut
       prize = p
       winner = number
-    ->)
+    ,(e)->
+        console.error(e)
+    )
     i = 0
     hasToBoom =(index) =>
       =>

@@ -1,0 +1,12 @@
+<?php
+    function randNum() {
+        return rand(1, 5);
+    }
+    header('Content-Type: application/json');
+    if(randNum() == $_GET['clown']){
+        echo file_get_contents("assets/winner.json");
+    }else{
+        echo file_get_contents("assets/loser.json");
+    }
+
+?>

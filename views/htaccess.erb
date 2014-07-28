@@ -6,6 +6,5 @@ RewriteCond %{REQUEST_FILENAME}\.html -f
 RewriteRule ^(.*)$ $1.html
 # Replace html with your file extension, eg: php, htm, asp
 
-
-RewriteRule ^<%= service_url %>2$ assets/winner.json
-RewriteRule ^<%= service_url %>.*$ assets/loser.json
+AddType application/json .json
+RewriteRule ^drown_clown/(.*)$ service.php?clown=$1
