@@ -71,30 +71,19 @@ task :build_assets, [:output_dir] do |task, args|
   build_assets output_dir
 end
 
-desc 'Builds the static application, by default, using development keys.'
-task :build, [:output_dir, :use_parse_production] do |task, args|
+desc 'Builds the static application.'
+task :build, [:output_dir] do |task, args|
   output_dir = args[:output_dir] || 'build'
-  build output_dir,args[:use_parse_production]
+  build output_dir,args[]
 end
 
-desc 'Builds the static application using production keys.'
-task :build_production, [:output_dir] do |task, args|
-  output_dir = args[:output_dir] || 'production'
+desc 'Builds the static application not minified'
+task :build_no_min, [:output_dir] do |task, args|
+  App.set :environment, :development
+  App.reconfigure
+  output_dir = args[:output_dir] || 'build'
   build output_dir, true
-  #adding .htaccess file only for production
-  build_htaccess output_dir
 end
-
-desc 'Builds the static web application (dashboard).'
-task :build_web, [:output_dir,:production] do |task, args|
-  output_dir = args[:output_dir] || 'parse/public'
-  Application.set :index,          :web
-  Application.set :main_js,        'clothespin-web.js'
-  Application.set :main_css,       'clothespin-web.css'
-  # Application.set :resources_path, 'assets/resources-web'
-  build output_dir, args[:production]
-end
-
 
 def get_notes version
   %x{sed -n '/#{version}/,$p' changelog.md | sed '/^$/,$d'}
