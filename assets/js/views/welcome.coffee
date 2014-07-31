@@ -33,20 +33,17 @@ class Welcome extends BaseView
     ), 1000
 
   moveBalloons: ->
-    return new Promise(=>
-      move(@$('.flight-balloons')[0])
-        .duration('1s')
-        .ease('in-out')
-        .translate(0, -420)
-        .then()
-        .duration('1s')
-        .ease('in-out')
-        .translate(0, 50)
-        .then(@showPrize)
-        .pop()
-        .end();
-
-    )
+    move(@$('.flight-balloons')[0])
+      .duration('1s')
+      .ease('in-out')
+      .translate(0, -420)
+      .then()
+      .duration('1s')
+      .ease('in-out')
+      .translate(0, 50)
+      .then(@showPrize)
+      .pop()
+      .end();
 
   render: ->
     @moveBalloons()
