@@ -1,2 +1,281 @@
-//= require game
-//= require hover
+//@import 'compass/css3';
+
+#game
+  display: none
+  size: 700px 350px
+  position: relative
+  background-image: url('../images/background_select.png')
+  background-repeat: no-repeat
+  overflow: hidden
+  
+  #clowns 
+    position: absolute
+    bottom: -250px
+  
+  #clown 
+    position: absolute
+    bottom: 0px
+  
+  #guns 
+    position: absolute
+    bottom: 0px
+    left: 132px
+
+  #balloon1 
+    bottom: 193px
+    left: 71px
+
+  #balloon2 
+    bottom: 204px
+    left: 207px
+
+  #balloon3 
+    bottom: 209px
+    left: 342px
+
+  #balloon4 
+    bottom: 205px
+    left: 477px
+
+  #balloon5 
+    bottom: 193px
+    left: 611px
+
+  div.balloon 
+    position: absolute
+    size: 72px 95px
+
+    img
+      display: none
+      position: absolute
+
+      &.balloon 
+        display: block
+        bottom: 0px
+        transform-origin: center bottom
+
+      &.boom 
+        top: -12px
+        left: -54px
+        width: 120px
+
+      &.splash
+        top: -21px
+        left: -52px
+
+  div.number
+    position: absolute
+    bottom: 63px
+    display: none
+
+    &:hover 
+      div:first-child
+        animation: outline 1s infinite
+
+    div
+      position: absolute
+      size: 53px 52px
+
+    div:first-child
+      opacity: 0.5
+  
+
+  #number1 
+    left: 151px   
+    div
+      background-image: url('../images/number1.png')
+
+  #number2
+    left: 246px
+    div
+      background-image: url('../images/number2.png')
+  
+  #number3
+    left: 319px
+    div
+      background-image: url('../images/number3.png')
+
+  #number4
+    left: 401px
+    div
+      background-image: url('../images/number4.png')
+
+  #number5
+    left: 489px
+    div
+      background-image: url('../images/number5.png')
+  
+  .drown
+    position: absolute
+    background-repeat: no-repeat
+
+  #drown1 
+    size: 0px 125px
+    right: 521px
+    bottom: 0px
+    background-image: url('../images/splash1.png')
+    background-position-x: right
+
+  #drown2
+    size: 0px 132px
+    right: 431px
+    bottom: 16px
+    background-image: url('../images/splash2.png')
+    background-position-x: right
+  
+  #drown3
+    size: 43px 0px
+    left: 323px
+    bottom: 82px
+    background-image: url('../images/splash3.png')
+  
+  #drown4
+    size: 0px 137px
+    left: 437px
+    bottom: 5px
+    background-image: url('../images/splash4.png')
+  
+  #drown5
+    size: 0px 125px
+    left: 516px
+    bottom: 0px
+    background-image: url('../images/splash5.png')
+  
+  #chooseGun
+    position: absolute
+    bottom: 10px
+    right: 20px
+  
+  #balloons
+    position: absolute
+    top: -114px
+    left: 195px
+  
+
+#welcome
+  size: 700px 350px
+  position: relative
+  overflow: hidden
+  background-image: url('../images/bg.png')
+  background-repeat: no-repeat
+
+  &.light
+    background-image: url('../images/background_light.png')
+
+  #background
+    size: 700px 350px
+    position: absolute
+    top: 0px
+    left: 0px
+    opacity: 0.5
+    background-color: #000
+
+  .flight-balloons
+    position: absolute
+    bottom: -420px
+    left: 214px
+
+  #prize
+    position: absolute
+    top: 126px
+    left: 128px
+    transition-property: transform
+    transform: scale(2,1.5)
+    display: none
+
+  #splash
+    position: absolute
+    top: 102px
+    left: 53px
+    display: none
+
+  #ribbon-back
+    position: absolute
+    top: 117px
+    left: 240px
+    display: none
+
+  #ribbon1
+    position: absolute
+    top: 76px
+    right: 254px
+    size: 0px 84px
+    background-image: url('../images/ribbon-1.png')
+    background-position-x: right
+    background-repeat: no-repeat
+
+  #ribbon2
+    position: absolute
+    top: 209px
+    left: 236px
+    size: 0px 84px
+    background-image: url('../images/ribbon-2.png')
+    background-position-x: left
+    background-repeat: no-repeat
+
+  #welcome-you
+    display: none
+    background-image: url('../images/popover.png')
+    background-repeat: no-repeat
+    position: absolute
+    size: 545px 350px
+    top: 0px
+    left: 78px
+    padding-top: 50px
+    font-family: helvetica
+    text-align: center
+    color: rgb(65, 65, 65)
+
+    h1
+      font-size: 40px
+      font-weight: normal
+    p
+      font-size: 23px
+
+    .button
+      cursor: pointer
+      size: 205px 26px
+      margin-left: 152px
+      background: transparent
+
+
+#bye
+  size: 700px 350px
+  position: relative
+  overflow: hidden
+  background-image: url('../images/bg.png')
+  background-repeat: no-repeat
+  display: none
+
+  .flight-balloons
+    position: absolute
+    bottom: -160px
+    left: 214px
+    transition-property: transform
+    transform: scale(1.5,1.5)
+
+  #way
+    position: absolute
+    left: 178px
+    top: 106px
+
+  #keep
+    position: absolute
+    left: 80px
+    top: 166px
+
+
+.pch
+  position: absolute
+  left: 5px
+  top: 5px
+
+@keyframes outline
+  0%
+    transform: scale(1)
+
+  50%
+    transform: scale(1.3)
+
+  100%
+    transform: scale(1)
