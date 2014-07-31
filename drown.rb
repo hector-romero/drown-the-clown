@@ -1,4 +1,5 @@
 require 'bundler'
+
 Bundler.require :default, :app, :assets
 
 class App < Sinatra::Base
