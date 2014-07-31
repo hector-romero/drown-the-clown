@@ -247,8 +247,8 @@
 
     .button
       cursor: pointer
-      width: 205px
-      height: 26px
+      width: 238px
+      height: 58px
       margin-left: 152px
       background: transparent
 

@@ -46,7 +46,7 @@
 #welcome #welcome-you{display:none;background-image:url("../assets/popover.png");background-repeat:no-repeat;position:absolute;width:545px;height:350px;top:0;left:78px;padding-top:50px;font-family:helvetica;text-align:center;color:#414141;}
 #welcome #welcome-you h1{font-size:40px;font-weight:normal}
 #welcome #welcome-you p{font-size:23px}
-#welcome #welcome-you .button{cursor:pointer;width:205px;height:26px;margin-left:152px;background:transparent}
+#welcome #welcome-you .button{cursor:pointer;width:238px;height:58px;margin-left:152px;background:transparent}
 #bye{width:700px;height:350px;position:relative;overflow:hidden;background-image:url("../assets/bg.png");background-repeat:no-repeat;display:none;}
 #bye .flight-balloons{position:absolute;bottom:-160px;left:214px;-webkit-transition-property:-webkit-transform;-moz-transition-property:-moz-transform;-o-transition-property:-o-transform;-ms-transition-property:-ms-transform;transition-property:transform;-webkit-transform:scale(1.5,1.5);-moz-transform:scale(1.5,1.5);-o-transform:scale(1.5,1.5);-ms-transform:scale(1.5,1.5);transform:scale(1.5,1.5)}
 #bye #way{position:absolute;left:178px;top:106px}
