@@ -1,3 +1,10 @@
+#Working
+- Safari (iOS 7)
+- Google Chrome (35.0.1916.153)
+- IE (>= 10)
+- Firefox (30.0)
+(May work in other browsers not listed here)
+
 #TODO
 - Change "You win" message.
 - Fix Animations not working in some browsers.
