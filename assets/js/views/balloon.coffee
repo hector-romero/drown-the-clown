@@ -54,6 +54,13 @@ class Balloon extends Backbone.View
 
       $drown.animate animation.add,1000,=>
         @expand(hasToBoom)()
+# TODO This enables the "dancing" splash, but we need to wrap the elements for ie to work
+#        animation.add = {
+#          transform: 'skewX(5deg) skewY(5deg)'
+#        }
+#        animation.sub = {
+#          transform: 'skewX(-5deg) skewY(-5deg)'
+#        }
         $drown.animate animation.sub,400, =>
           $drown.animate animation.add,400, =>
             $drown.animate animation.sub,400, =>

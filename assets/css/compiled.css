@@ -154,8 +154,8 @@
 
 #game #drown1 {
     width: 0;
-    height: 125px;
-    right: 521px;
+    height: 125px !important;
+    right: 521px !important;
     bottom: 0;
     background-image: url("../assets/splash1.png");
     background-position-x: right
@@ -163,8 +163,8 @@
 
 #game #drown2 {
     width: 0;
-    height: 132px;
-    right: 431px;
+    height: 132px !important;;
+    right: 431px !important;;
     bottom: 16px;
     background-image: url("../assets/splash2.png");
     background-position-x: right

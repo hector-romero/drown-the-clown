@@ -24,11 +24,15 @@ class Game extends BaseView
       @drown +(/[0-9].*/.exec(tId)[0])
 
   moveBalloons: ->
-    try
+    if(false)
       duration = "0.3s"
       move("#balloons").duration(duration).ease("out").translate(20, 40).then().duration(duration).ease("out").translate(-20, 40).then().duration(duration).ease("out").translate(20, 20).then().duration(duration).ease("out").translate(-20, 14).pop().pop().pop().end()
-    catch
-      console.log("Faiked move ballons")
+    else
+      $balloons = $("#balloonsWrapper")
+      $balloons.animate {transform: 'translate(20,40)'},300, =>
+        $balloons.animate {transform: 'translate(-20,70)'},300, =>
+          $balloons.animate {transform: 'translate(20,100)'},300, =>
+            $balloons.animate {transform: 'translate(-20,114)'},300
 
   moveClowns: (end) ->
     try
