@@ -18,13 +18,15 @@ class ApplicationView extends Backbone.View
       showNext()
 
   lightBackground: =>
-    try
+    if(false)
       move(@$('#background')[0])
         .duration('1s')
         .set('opacity', 0)
         .end();
-    catch e
-      null
+    else
+      @$('#background').animate {
+        opacity: 0
+      },1000
 
   initialize: ->
     @welcome = new Welcome(el: $("#welcome")[0])
