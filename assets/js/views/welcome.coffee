@@ -6,9 +6,12 @@ class Welcome extends BaseView
 
   showPrize: =>
     @$('#prize').fadeIn 'fast', =>
+      try
        move(@$('#prize')[0])
          .scale(1)
          .end(@showSplash)
+      catch
+        @showSplash()
 
   showSplash: =>
     @$('#splash').fadeIn =>
@@ -16,6 +19,7 @@ class Welcome extends BaseView
 
   showRibbon: =>
     @$('#ribbon-back').fadeIn =>
+      try
          move(@$('#ribbon1')[0])
            .add('width', 209)
            .duration('0.5s')
@@ -26,6 +30,8 @@ class Welcome extends BaseView
            .duration('0.5s')
            .ease('in')
            .end(@showWelcome)
+      catch
+        @showWelcome()
 
   showWelcome: =>
     window.setTimeout (=>
@@ -33,17 +39,20 @@ class Welcome extends BaseView
     ), 1000
 
   moveBalloons: ->
-    move(@$('.flight-balloons')[0])
-      .duration('1s')
-      .ease('in-out')
-      .translate(0, -420)
-      .then()
-      .duration('1s')
-      .ease('in-out')
-      .translate(0, 50)
-      .then(@showPrize)
-      .pop()
-      .end();
+    try
+      move(@$('.flight-balloons')[0])
+        .duration('1s')
+        .ease('in-out')
+        .translate(0, -420)
+        .then()
+        .duration('1s')
+        .ease('in-out')
+        .translate(0, 50)
+        .then(@showPrize)
+        .pop()
+        .end();
+    catch
+      @showPrize()
 
   render: ->
     @moveBalloons()
