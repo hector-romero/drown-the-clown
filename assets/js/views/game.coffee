@@ -98,10 +98,10 @@ class Game extends BaseView
     )
     i = 0
     hasToBoom =(index) =>
+      balloon = index + 1
       =>
-        index++
         timedOut = timedOut || index == number || index == winner
-        index == winner
+        balloon == winner
     for balloon,i in @balloons
       balloon.drown hasToBoom i
     game = this
