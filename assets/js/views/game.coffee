@@ -35,11 +35,14 @@ class Game extends BaseView
             $balloons.animate {transform: 'translate(-20,114)'},300
 
   moveClowns: (end) ->
-    try
+    if(false)
       move("#clowns").add("bottom", 250).then().sub("bottom", 10).then().add("bottom", 10).then(end).pop().pop().end()
-    catch
-      end()
-      console.log("failed Move clowns")
+    else
+      $clowns = $("#clowns")
+      $clowns.animate {bottom: "+=250px"},500,=>
+        $clowns.animate {bottom: "-=10px"},400,=>
+          $clowns.animate {bottom: "+=10px"},400,=>
+            end()
 
   showNumbers: ->
     duration = 300
