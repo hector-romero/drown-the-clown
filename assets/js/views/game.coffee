@@ -1,5 +1,5 @@
 #= require views/base
-#= require vendor/ballon
+#= require views/balloon
 #= require service
 
 getRandomWinner = (excluding)->
@@ -43,26 +43,41 @@ class Game extends BaseView
     @balloons = []
     @$el.fadeIn()
     window.setTimeout (=>
-      @balloons.push new Ballon(1,
-        property: "width"
-        value: 110
-      , this)
-      @balloons.push new Ballon(2,
-        property: "width"
-        value: 68
-      , this)
-      @balloons.push new Ballon(3,
-        property: "height"
-        value: 58
-      , this)
-      @balloons.push new Ballon(4,
-        property: "width"
-        value: 55
-      , this)
-      @balloons.push new Ballon(5,
-        property: "width"
-        value: 110
-      , this)
+      @balloons.push new Balloon(
+        number: 1
+        el: @$("#balloon1")[0]
+        animation:
+          property: "width"
+          value: 110
+      )
+      @balloons.push new Balloon(
+        number: 2
+        el: @$("#balloon2")[0]
+        animation:
+          property: "width"
+          value: 68
+      )
+      @balloons.push new Balloon(
+        number: 3
+        el: @$("#balloon3")[0]
+        animation:
+          property: "height"
+          value: 58
+      )
+      @balloons.push new Balloon(
+        number: 4
+        el: @$("#balloon4")[0]
+        animation:
+          property: "width"
+          value: 55
+      )
+      @balloons.push new Balloon(
+        number: 5
+        el: @$("#balloon5")[0]
+        animation:
+          property: "width"
+          value: 110
+      )
       @moveBalloons()
       @moveClowns @showNumbers
     ), 100

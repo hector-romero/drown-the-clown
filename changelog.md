@@ -6,11 +6,11 @@
 (May work in other browsers not listed here)
 
 #TODO
-- Change "You win" message.
+- <s>Change "You win" message.</s>
 - Fix Animations not working in some browsers.
 - Fix: In browsers where the animation doesn't work, you can't win because there's no time to make the request
 - Refactor Balloon.js
-- Disable user interaction after first button pressed
+- <s>Disable user interaction after first button pressed</s>
 
 ## v0.3.0 - 2014-07-31
 - Can click on "Play Now button"
