@@ -9,9 +9,9 @@ var Ballon = function(number, drownAnimation, game) {
 
     var init = function() {
         $balloon.css('width', '18px');
-        $number.click(function() {
-            game.drown(number);
-        });
+//        $number.click(function() {
+//            game.drown(number);
+//        });
     }
     
     var boom = function(hasToBoom) {

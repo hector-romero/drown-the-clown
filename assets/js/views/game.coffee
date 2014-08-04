@@ -8,6 +8,21 @@ getRandomWinner = (excluding)->
   rand = list[Math.floor(Math.random() * list.length)]
 
 class Game extends BaseView
+
+  events:
+    'click .number' : 'clickButton'
+    
+  clickButton: (e)->
+    return if @playing
+    @playing = true
+    tId = ''
+    if(e.currentTarget)
+      tId = e.currentTarget.id
+    else
+      tId = e.target.id
+    if(/[0-9].*/.exec(tId))
+      @drown +(/[0-9].*/.exec(tId)[0])
+
   moveBalloons: ->
     duration = "0.3s"
     move("#balloons").duration(duration).ease("out").translate(20, 40).then().duration(duration).ease("out").translate(-20, 40).then().duration(duration).ease("out").translate(20, 20).then().duration(duration).ease("out").translate(-20, 14).pop().pop().pop().end()
