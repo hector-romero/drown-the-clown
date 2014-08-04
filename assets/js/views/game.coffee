@@ -55,7 +55,7 @@ class Game extends BaseView
         el: @$("#balloon2")[0]
         animation:
           property: "width"
-          value: 68
+          value: 55
       )
       @balloons.push new Balloon(
         number: 3

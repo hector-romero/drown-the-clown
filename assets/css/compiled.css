@@ -29,7 +29,7 @@
 #game .drown{position:absolute;background-repeat:no-repeat}
 #game #drown1{width:0;height:125px;right:521px;bottom:0;background-image:url("../assets/splash1.png");background-position-x:right}
 #game #drown2{width:0;height:132px;right:431px;bottom:16px;background-image:url("../assets/splash2.png");background-position-x:right}
-#game #drown3{width:43px;height:0;left:323px;bottom:82px;background-image:url("../assets/splash3.png")}
+#game #drown3{width:43px;height:0;left:323px;bottom:82px;background-position:bottom;background-image:url("../assets/splash3.png")}
 #game #drown4{width:0;height:137px;left:437px;bottom:5px;background-image:url("../assets/splash4.png")}
 #game #drown5{width:0;height:125px;left:516px;bottom:0;background-image:url("../assets/splash5.png")}
 #game #chooseGun{position:absolute;bottom:10px;right:20px}
