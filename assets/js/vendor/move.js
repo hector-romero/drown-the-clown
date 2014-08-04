@@ -1183,7 +1183,12 @@ Move.prototype.transition = function(prop){
 
 Move.prototype.applyProperties = function(){
   for (var prop in this._props) {
-    this.el.style.setProperty(prop, this._props[prop]);
+    if(this.el.style.setAttribute){
+        this.el.style.setAttribute(prop, this._props[prop]);
+    }else  {
+        this.el.style.setProperty(prop, this._props[prop]);
+    }
+
   }
   return this;
 };
