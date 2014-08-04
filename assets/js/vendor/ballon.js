@@ -7,12 +7,13 @@ var Ballon = function(number, drownAnimation, game) {
     var $container = $('#' + id);
     var $drown = $('#splash' + number);
 
-    var init = function() {
-        $balloon.css('width', '18px');
+//    var init = function() {
+//        console.log("Init")
+//        $balloon.css('width', '18px');
 //        $number.click(function() {
 //            game.drown(number);
 //        });
-    }
+//    }
     
     var boom = function(hasToBoom) {
         return function() {
@@ -89,6 +90,6 @@ var Ballon = function(number, drownAnimation, game) {
             .end(expand(hasToBoom));
     };
 
-    init();
+//    init();
     return this;
 }

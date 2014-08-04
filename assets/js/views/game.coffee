@@ -11,7 +11,7 @@ class Game extends BaseView
 
   events:
     'click .number' : 'clickButton'
-    
+
   clickButton: (e)->
     return if @playing
     @playing = true

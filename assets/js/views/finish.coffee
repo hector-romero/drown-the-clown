@@ -8,10 +8,9 @@ class Finish extends BaseView
     @prize = prize
 
   render: ->
-    super
     if @prize && @prize.description
-      alert @prize.description
-
+      @$el.addClass("you-win")
+    super
 # exports
 
 window.Finish = Finish
